@@ -1,0 +1,31 @@
+spring:
+  profiles:
+    active: product
+#server:
+#  port: 443
+#  ssl:
+#    key-store: classpath:keystore.p12
+#    key-store-type: PKCS12
+#    key-alias: mytomcat
+#    key-password: mldnjava
+---
+server:
+  port: 8086
+spring:       #表示该配置直接为spring容器负责处理
+  messages:    #表示进行资源配置
+    basename: i18n/Messages, i18n/Pages    #资源文件的名称
+  profiles: dev
+---
+server:
+  port: 9090
+spring:       #表示该配置直接为spring容器负责处理
+  messages:    #表示进行资源配置
+    basename: i18n/Messages, i18n/Pages    #资源文件的名称
+  profiles: beta
+---
+server:
+  port: 10101
+spring:       #表示该配置直接为spring容器负责处理
+  messages:    #表示进行资源配置
+    basename: i18n/Messages, i18n/Pages    #资源文件的名称
+  profiles: product

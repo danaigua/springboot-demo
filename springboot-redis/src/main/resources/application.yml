@@ -1,0 +1,16 @@
+
+spring:
+  redis:
+    host: 127.0.0.1                         #地址
+    port: 6379                              #端口
+    password: root                          #密码
+    timeout: 1000                           #超时时间
+    database: 0                             #redis默认有16个分片，这里配置的是具体使用的分片，默认是0
+    jedis:
+      pool:
+        max-active: 8                       #连接池最大的连接数
+        max-wait: 1                         #最长的等待时间
+        max-idle: 8                         #最大的空闲连接时间
+        min-idle: 2                         #最小的空闲连接时间
+server:
+  port: 10002

@@ -1,0 +1,22 @@
+server:
+  port: 8001
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml        #mybatis配置文件所在路径
+  type-aliases-package: com.hengyue.entity                  #定义所有操作类的别名所在包
+  mapper-locations: classpath:mybatis/com/hengyue/mapper/*.xml
+spring:
+  messages:
+    basename: i18n/Messages, i18n/Pages
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/hykj
+    username: root
+    password: root
+    filters: stat,wall,log4j
+    dbcp2:
+      min-idle: 6
+      initial-size: 5
+      max-idle: 8
+      max-total: 5
+      max-wait-millis: 200

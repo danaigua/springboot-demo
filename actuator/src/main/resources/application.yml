@@ -1,0 +1,16 @@
+server:
+  port: 10001
+management:
+  endpoint:
+    health:
+      show-details: always                  #指的是可以展示健康信息的全部内容     地址：localhost:10001/actuator/health
+info:                                       #配置info的信息
+  app:
+    name: actuator
+    version: 1.0.0
+spring:
+  security:
+    user:
+      name: actuator
+      password: actuator
+      roles: ACTUATOR_ADMIN
